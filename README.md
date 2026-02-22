@@ -6,6 +6,13 @@ Designed to mimic the intensity and rules of an IPL auction in a simple, interac
 
 ---
 
+## 🏫 Built For
+
+- Gyan Mitra 2026
+- MEPCO Schlenk Engineering College (Autonomous), Sivakasi.
+
+---
+
 ## ✨ Highlights
 
 - Real-time auction dashboard  
@@ -84,3 +91,20 @@ ipl-bidwars-2026/
 - git clone https://github.com/TheCreator8055/ipl-bidwars-2026.git
 - cd ipl-bidwars-2026
 - open index.html
+
+---
+## 👥 Team
+
+- Shivanantham 
+- Sanjay Kumar
+- Packiyanathan
+---
+
+## 🧩 Learning Outcomes
+
+- DOM manipulation without frameworks
+- State management using LocalStorage
+- Rule-based validation logic
+- UI feedback & animations
+- Feature planning under time constraints
+- Team collaboration under deadline pressure
