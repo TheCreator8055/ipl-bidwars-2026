@@ -79,7 +79,7 @@ ipl-bidwars-2026/
 └── LICENSE
 ```
 ---
-#How to Run Locally
-git clone https://github.com/TheCreator8055/ipl-bidwars-2026.git
-cd ipl-bidwars-2026
-open index.html
+##▶️ How to Run Locally
+-git clone https://github.com/TheCreator8055/ipl-bidwars-2026.git
+-cd ipl-bidwars-2026
+-open index.html
