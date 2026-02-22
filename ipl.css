@@ -1,0 +1,341 @@
+*{
+  box-sizing:border-box;
+  transition:all .25s ease;
+}
+
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background: radial-gradient(circle at top,#1e3a8a,#020617 60%);
+  color:#fff;
+  padding:20px;
+}
+
+h1{
+  text-align:center;
+  background: linear-gradient(90deg,#38bdf8,#facc15,#4ade80);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-size:32px;
+  margin-bottom:25px;
+}
+
+/* ===== ADMIN DASHBOARD ===== */
+.admin{
+  background: linear-gradient(135deg,#0f172a,#020617);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 0 30px rgba(56,189,248,.3);
+}
+
+.admin-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-top:15px;
+}
+
+.admin-grid div{
+  background: linear-gradient(135deg,#1e293b,#020617);
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+.admin-grid div b{
+  display:block;
+  font-size:22px;
+  margin-top:6px;
+  color:#4ade80;
+}
+
+/* ===== TEAM CARD ===== */
+.team{
+  background: linear-gradient(145deg,#020617,#1e293b);
+  border-radius:16px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
+  border-left:6px solid #38bdf8;
+}
+
+.team:hover{
+  transform:scale(1.02);
+}
+
+.team h2{
+  color:#facc15;
+  margin-bottom:8px;
+}
+
+.remaining{
+  color:#22c55e;
+  font-size:17px;
+  font-weight:bold;
+}
+
+/* ===== LOCKED TEAM ===== */
+.locked{
+  opacity:.55;
+  filter:grayscale(100%);
+  border-left-color:#ef4444;
+}
+
+/* ===== INPUTS ===== */
+input{
+  width:100%;
+  padding:8px;
+  margin:6px 0;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  background:#020617;
+  color:#fff;
+  box-shadow:inset 0 0 5px rgba(255,255,255,.1);
+}
+
+input::placeholder{
+  color:#94a3b8;
+}
+
+/* ===== BUTTONS ===== */
+button{
+  padding:9px 16px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  margin-top:8px;
+}
+
+.buy{
+  background: linear-gradient(90deg,#22c55e,#4ade80);
+  color:#022c22;
+}
+
+.buy:hover{
+  transform:scale(1.05);
+}
+
+.undo{
+  background: linear-gradient(90deg,#facc15,#fde047);
+  color:#422006;
+}
+
+.undo:hover{
+  transform:scale(1.05);
+}
+
+/* ===== EXPORT BUTTON ===== */
+button[onclick*="export"]{
+  background: linear-gradient(90deg,#38bdf8,#0ea5e9);
+  color:#022c22;
+  margin:20px auto;
+  display:block;
+  font-size:16px;
+}
+
+button[onclick*="export"]:hover{
+  transform:scale(1.08);
+}
+
+/* ===== PLAYER LIST ===== */
+ul{
+  margin-top:12px;
+  padding-left:20px;
+}
+
+li{
+  font-size:14px;
+  margin:5px 0;
+  color:#e5e7eb;
+}
+
+
+
+
+/* ===== BUY ROW (SHORT INPUTS) ===== */
+.buy-row{
+  display:flex;
+  gap:8px;
+  margin-top:6px;
+}
+
+.buy-row input{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+.buy-row input:first-child{
+  flex:2;   /* Player name */
+}
+
+.buy-row input:last-child{
+  flex:1;   /* Amount */
+  text-align:center;
+}
+/* ===== CUSTOM ALERT ===== */
+.alert-box{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  opacity:0;
+  pointer-events:none;
+}
+
+.alert-box.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.alert-content{
+  background:linear-gradient(135deg,#1e293b,#020617);
+  padding:25px 30px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(56,189,248,.5);
+  animation:pop .3s ease;
+  max-width:320px;
+}
+
+@keyframes pop{
+  from{transform:scale(.8);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.alert-content span{
+  display:block;
+  font-size:16px;
+  margin-bottom:18px;
+  color:#facc15;
+}
+
+.alert-content button{
+  background:linear-gradient(90deg,#22c55e,#4ade80);
+  border:none;
+  padding:8px 22px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.alert-content button:hover{
+  transform:scale(1.08);
+}
+/* Player type colors */
+.player-indian {
+  color: #4ade80; /* green */
+}
+
+.player-foreigner {
+  color: #60a5fa; /* blue */
+  font-weight: 600;
+}
+/* ===== TEAM LOGO ===== */
+.team-logo{
+  width:60px;              /* BIGGER logo */
+  height:60px;
+  object-fit:contain;
+  border-radius:50%;
+  padding:6px;
+  background:radial-gradient(circle,#ffffff22,#00000000);
+  box-shadow:0 0 15px rgba(56,189,248,.6);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+
+/* ✨ Hover Animation */
+.team-logo:hover{
+  transform:scale(1.25) rotate(5deg);
+  box-shadow:0 0 30px rgba(250,204,21,.9);
+}
+
+/* ===== RANK GLOW ANIMATION ===== */
+
+@keyframes goldGlow {
+  0% { box-shadow: 0 0 10px #facc15; }
+  50% { box-shadow: 0 0 25px #facc15, 0 0 40px #fbbf24; }
+  100% { box-shadow: 0 0 10px #facc15; }
+}
+
+@keyframes silverGlow {
+  0% { box-shadow: 0 0 10px #cbd5e1; }
+  50% { box-shadow: 0 0 25px #e2e8f0, 0 0 40px #94a3b8; }
+  100% { box-shadow: 0 0 10px #cbd5e1; }
+}
+
+@keyframes bronzeGlow {
+  0% { box-shadow: 0 0 10px #d97706; }
+  50% { box-shadow: 0 0 25px #f59e0b, 0 0 40px #b45309; }
+  100% { box-shadow: 0 0 10px #d97706; }
+}
+
+.rank-gold {
+  border: 3px solid #facc15;
+  animation: goldGlow 1.8s infinite alternate;
+}
+
+.rank-silver {
+  border: 3px solid #cbd5e1;
+  animation: silverGlow 1.8s infinite alternate;
+}
+
+.rank-bronze {
+  border: 3px solid #d97706;
+  animation: bronzeGlow 1.8s infinite alternate;
+}
+.team {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.team:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255,255,255,.2);
+}
+/* ===== ADMIN BUY PANEL ===== */
+.admin-buy-panel{
+  margin-top:20px;
+  padding:18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#020617,#1e293b);
+  box-shadow:0 0 20px rgba(56,189,248,.25);
+}
+
+.admin-form{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr auto;
+  gap:10px;
+  margin-top:10px;
+}
+
+.admin-form input,
+.admin-form select{
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  background:#020617;
+  color:#fff;
+  font-size:14px;
+  box-shadow:inset 0 0 6px rgba(255,255,255,.08);
+}
+
+.admin-form input:focus,
+.admin-form select:focus{
+  box-shadow:0 0 8px #38bdf8;
+  transform:scale(1.02);
+}
+
+.admin-form button{
+  white-space:nowrap;
+}
+
+
